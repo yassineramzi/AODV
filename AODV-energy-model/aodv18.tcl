@@ -46,10 +46,16 @@
              -phyType $val(netif) \
              -channelType $val(chan) \
              -topoInstance $topo \
+			 -energyModel "EnergyModel" \
+			 -initialEnergy 3.4 \
+			 -txPower 0.33 \
+			 -rxPower 0.1 \
+	         -idlePower 0.05 \
+			 -sleepPower 0.03 \
              -agentTrace ON \
              -routerTrace ON \
              -macTrace OFF \
-             -movementTrace ON
+             -movementTrace ON  
 
 	     for {set i 0} {$i < $val(nn) } { incr i } {
 	        set node_($i) [$ns node]
